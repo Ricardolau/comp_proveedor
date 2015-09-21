@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="proveedor" addrulepath="components/com_proveedor/models/rules" label="COM_PROVEEDOR_FORM_LABEL">
+		<field name="proveedor_name"
+			type="text"
+			id="proveedor-name"
+			size="30"
+			description="COM_PROVEEDOR_CONTACT_EMAIL_NAME_DESC"
+			label="COM_PROVEEDOR_CONTACT_EMAIL_NAME_LABEL"
+			filter="string"
+			required="true"
+		/>
+		<field name="proveedor_email"
+			type="email"
+			id="proveedor-email"
+			size="30"
+			description="COM_PROVEEDOR_EMAIL_DESC"
+			label="COM_PROVEEDOR_EMAIL_LABEL"
+			filter="string"
+			validate="proveedoremail"
+			required="true"
+		/>
+		<field name="proveedor_subject"
+			type="text"
+			id="proveedor-emailmsg"
+			size="60"
+			description="COM_PROVEEDOR_CONTACT_MESSAGE_SUBJECT_DESC"
+			label="COM_PROVEEDOR_CONTACT_MESSAGE_SUBJECT_LABEL"
+			filter="string"
+			validate="proveedoremailsubject"
+			required="true"
+		/>
+		<field name="proveedor_message"
+			type="textarea"
+			cols="50"
+			rows="10"
+			id="proveedor-message"
+			description="COM_PROVEEDOR_CONTACT_ENTER_MESSAGE_DESC"
+			label="COM_PROVEEDOR_CONTACT_ENTER_MESSAGE_LABEL"
+			filter="safehtml"
+			validate="proveedoremailmessage"
+			required="true"
+		/>
+		<field name="proveedor_email_copy"
+			type="checkbox"
+			id="proveedor-email-copy"
+			description="COM_PROVEEDOR_CONTACT_EMAIL_A_COPY_DESC"
+			label="COM_PROVEEDOR_CONTACT_EMAIL_A_COPY_LABEL"
+			default="0"
+		/>
+
+	</fieldset>
+	<fieldset name="captcha">
+		<field
+			name="captcha"
+			type="captcha"
+			label="COM_PROVEEDOR_CAPTCHA_LABEL"
+			description="COM_PROVEEDOR_CAPTCHA_DESC"
+			validate="captcha"
+			namespace="proveedor"
+		/>
+	</fieldset>
+</form>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension type="component" version="3.4" method="upgrade">
+
+<name>COM_PROVEEDOR</name>
+<author>Soluciones Vigo</author>
+<copyright>Copyright (C) 2014 Soluciones Vigo .</copyright>
+<license>GNU General Public License</license>
+<authorEmail>info@solucionesvigo.es</authorEmail>
+<authorUrl>http://solucionesvigo.es</authorUrl>
+<creationDate>Septiembre 2015</creationDate>
+<version>0.1.0.1</version>
+<description>COM_PROVEEDOR_DESCRIPTION</description>
+
+<install>
+    <sql>
+        <file driver="mysql" charset="utf8">sql/install.mysql.sql</file>
+    </sql>
+</install>
+<uninstall>
+    <sql>
+        <file driver="mysql" charset="utf8">sql/uninstall.mysql.sql</file>
+    </sql>
+</uninstall>
+
+
+<files folder="site">
+
+    <filename>index.html</filename>
+    <filename>proveedor.php</filename>
+    <filename>metadata.xml</filename>
+    <filename>router.php</filename>
+    <filename>controller.php</filename>
+	
+    <folder>controllers</folder>
+	<folder>helpers</folder>
+    <folder>models</folder>
+    <folder>views</folder>
+	
+</files>
+
+<languages folder="site">
+
+	<language tag="en-GB">language/en-GB/en-GB.com_proveedor.ini</language>
+	<language tag="es-ES">language/es-ES/es-ES.com_proveedor.ini</language>
+	
+</languages>
+
+<media destination="com_proveedor" folder="media">
+		<folder>icons</folder>
+</media>
+ 
+ 
+<administration>
+
+	<menu img="../media/com_proveedor/icons/proveedor16x16.png">COM_PROVEEDOR_MENU</menu>  
+	<files folder="admin">
+	
+		<filename>index.html</filename>
+		<filename>proveedor.php</filename>
+		<filename>controller.php</filename>
+		<filename>access.xml</filename>
+		<filename>config.xml</filename>
+		<filename>proveedor.xml</filename>
+
+		<folder>controllers</folder>
+		<folder>helpers</folder>
+		<folder>models</folder>
+		<folder>sql</folder>
+		<folder>tables</folder>
+		<folder>views</folder>
+	
+	</files>  
+	
+	<languages folder="admin">
+	
+		<language tag="en-GB">language/en-GB/en-GB.com_proveedor.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.com_proveedor.sys.ini</language>
+		
+		<language tag="es-ES">language/es-ES/es-ES.com_proveedor.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.com_proveedor.sys.ini</language>
+		
+	</languages>
+	
+</administration>
+
+	
+</extension>
