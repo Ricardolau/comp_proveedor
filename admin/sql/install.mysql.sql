@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS `#__proveedor_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
   `alias` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '',
-  `con_position` varchar(255) DEFAULT NULL,
+  `pro_cif` varchar(10) DEFAULT NULL,
   `address` text,
   `suburb` varchar(100) DEFAULT NULL,
   `state` varchar(100) DEFAULT NULL,

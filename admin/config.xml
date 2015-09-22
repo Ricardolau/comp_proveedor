@@ -81,12 +81,12 @@
 			<option value="0">JHIDE</option>
 		</field>
 
-		<field name="show_position"
+		<field name="show_cif"
 			type="radio"
 			class="btn-group btn-group-yesno"
 			default="1"
-			label="COM_PROVEEDOR_FIELD_PARAMS_CONTACT_POSITION_LABEL"
-			description="COM_PROVEEDOR_FIELD_PARAMS_CONTACT_POSITION_DESC"
+			label="COM_PROVEEDOR_FIELD_PARAMS_CIF_LABEL"
+			description="COM_PROVEEDOR_FIELD_PARAMS_CIF_DESC"
 		>
 			<option value="1">JSHOW</option>
 			<option value="0">JHIDE</option>
@@ -574,11 +574,11 @@
 			<option value="0">JHIDE</option>
 		</field>
 
-		<field name="show_position_headings" type="radio"
+		<field name="show_cif_headings" type="radio"
 			default="1"
 			class="btn-group btn-group-yesno"
-			label="COM_PROVEEDOR_FIELD_CONFIG_POSITION_LABEL"
-			description="COM_PROVEEDOR_FIELD_CONFIG_POSITION_DESC"
+			label="COM_PROVEEDOR_FIELD_CIF_LABEL"
+			description="COM_PROVEEDOR_FIELD_CIF_DESC"
 		>
 			<option value="1">JSHOW</option>
 			<option value="0">JHIDE</option>

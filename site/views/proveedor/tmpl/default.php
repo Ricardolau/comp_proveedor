@@ -75,12 +75,20 @@ jimport('joomla.html.html.bootstrap');
 		<div class="thumbnail pull-right">
 			<?php echo JHtml::_('image', $this->proveedor->image, JText::_('COM_PROVEEDOR_IMAGE_DETAILS'), array('align' => 'middle', 'itemprop' => 'image')); ?>
 		</div>
-	<?php endif; ?>
+	<?php endif;?>
 
-	<?php if ($this->proveedor->con_position && $this->params->get('show_position')) : ?>
-		<dl class="proveedor-position dl-horizontal">
+	<?php if ($this->proveedor->pro_cif && $this->params->get('show_cif')) : ?>
+		<dl class="proveedor-cif dl-horizontal">
+			<dt>
+				
+				<span class="<?php echo $this->params->get('marker_cif_class'); ?>" >
+					<?php echo $this->params->get('marker_cif'); ?>
+				</span>
+			</dt>
+			
+			
 			<dd itemprop="jobTitle">
-				<?php echo $this->proveedor->con_position; ?>
+				<?php echo $this->proveedor->pro_cif; ?>
 			</dd>
 		</dl>
 	<?php endif; ?>

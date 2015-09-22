@@ -139,9 +139,9 @@
 				<option value="1">JSHOW</option>
 			</field>
 
-		<field name="show_position_headings" type="list"
-			label="COM_PROVEEDOR_FIELD_CONFIG_POSITION_LABEL"
-			description="COM_PROVEEDOR_FIELD_CONFIG_POSITION_DESC"
+		<field name="show_cif_headings" type="list"
+			label="COM_PROVEEDOR_FIELD_CONFIG_CIF_LABEL"
+			description="COM_PROVEEDOR_FIELD_CONFIG_CIF_DESC"
 		>
 			<option value="">JGLOBAL_USE_GLOBAL</option>
 			<option value="0">JHIDE</option>
@@ -292,10 +292,10 @@
 				<option value="1">JSHOW</option>
 			</field>
 
-			<field name="show_position"
+			<field name="show_cif"
 				type="list"
-				description="COM_PROVEEDOR_FIELD_PARAMS_CONTACT_POSITION_DESC"
-				label="COM_PROVEEDOR_FIELD_PARAMS_CONTACT_POSITION_LABEL"
+				description="COM_PROVEEDOR_FIELD_PARAMS_CIF_DESC"
+				label="COM_PROVEEDOR_FIELD_PARAMS_CIF_LABEL"
 			>
 				<option value="">JGLOBAL_USE_GLOBAL</option>
 				<option value="0">JHIDE</option>

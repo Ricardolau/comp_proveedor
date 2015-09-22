@@ -71,8 +71,8 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 								<span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
 							<?php endif; ?>
 						</div>
-						<?php if ($this->params->get('show_position_headings')) : ?>
-								<?php echo $item->con_position; ?><br />
+						<?php if ($this->params->get('show_cif_headings')) : ?>
+								<?php echo $item->pro_cif; ?><br />
 						<?php endif; ?>
 						<?php if ($this->params->get('show_email_headings')) : ?>
 								<?php echo $item->email_to; ?>

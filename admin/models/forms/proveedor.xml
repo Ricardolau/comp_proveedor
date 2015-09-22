@@ -242,9 +242,9 @@
 			description="COM_PROVEEDOR_FIELD_PARAMS_IMAGE_DESC"
 			/>
 
-		<field name="con_position" type="text"
-			label="COM_PROVEEDOR_FIELD_INFORMATION_POSITION_LABEL"
-			description="COM_PROVEEDOR_FIELD_INFORMATION_POSITION_DESC"
+		<field name="pro_cif" type="text"
+			label="COM_PROVEEDOR_FIELD_INFORMATION_CIF_LABEL"
+			description="COM_PROVEEDOR_FIELD_INFORMATION_CIF_DESC"
 			size="30"
 		/>
 
@@ -387,10 +387,10 @@
 				<option value="1">JSHOW</option>
 			</field>
 
-			<field name="show_position" type="list"
+			<field name="show_cif" type="list"
 				class="chzn-color"
-				label="COM_PROVEEDOR_FIELD_PARAMS_CONTACT_POSITION_LABEL"
-				description="COM_PROVEEDOR_FIELD_PARAMS_CONTACT_POSITION_DESC"
+				label="COM_PROVEEDOR_FIELD_PARAMS_CIF_LABEL"
+				description="COM_PROVEEDOR_FIELD_PARAMS_CIF_DESC"
 			>
 				<option value="">JGLOBAL_USE_GLOBAL</option>
 				<option value="0">JHIDE</option>

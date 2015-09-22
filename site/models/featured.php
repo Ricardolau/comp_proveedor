@@ -95,7 +95,7 @@ class ProveedorModelFeatured extends JModelList
 			$config['filter_fields'] = array(
 				'id', 'a.id',
 				'name', 'a.name',
-				'con_position', 'a.con_position',
+				'pro_cif', 'a.pro_cif',
 				'suburb', 'a.suburb',
 				'state', 'a.state',
 				'country', 'a.country',

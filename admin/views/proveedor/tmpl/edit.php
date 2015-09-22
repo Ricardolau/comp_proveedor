@@ -47,7 +47,7 @@ $this->ignore_fieldsets = array('details', 'item_associations', 'jmetadata');
 					<div class="span6">
 						<?php echo $this->form->renderField('user_id'); ?>
 						<?php echo $this->form->renderField('image'); ?>
-						<?php echo $this->form->renderField('con_position'); ?>
+						<?php echo $this->form->renderField('pro_cif'); ?>
 						<?php echo $this->form->renderField('email_to'); ?>
 						<?php echo $this->form->renderField('address'); ?>
 						<?php echo $this->form->renderField('suburb'); ?>

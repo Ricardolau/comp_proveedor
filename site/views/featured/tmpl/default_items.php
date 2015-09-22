@@ -43,9 +43,9 @@ $params = &$this->item->params;
 			<th class="item-title">
 				<?php echo JHtml::_('grid.sort', 'COM_PROVEEDOR_CONTACT_EMAIL_NAME_LABEL', 'a.name', $listDirn, $listOrder); ?>
 			</th>
-			<?php if ($this->params->get('show_position_headings')) : ?>
-			<th class="item-position">
-				<?php echo JHtml::_('grid.sort', 'COM_PROVEEDOR_POSITION', 'a.con_position', $listDirn, $listOrder); ?>
+			<?php if ($this->params->get('show_cif_headings')) : ?>
+			<th class="item-cif">
+				<?php echo JHtml::_('grid.sort', 'COM_PROVEEDOR_CIF', 'a.pro_cif', $listDirn, $listOrder); ?>
 			</th>
 			<?php endif; ?>
 			<?php if ($this->params->get('show_email_headings')) : ?>
@@ -109,9 +109,9 @@ $params = &$this->item->params;
 						</a>
 					</td>
 
-					<?php if ($this->params->get('show_position_headings')) : ?>
-						<td class="item-position" itemprop="jobTitle">
-							<?php echo $item->con_position; ?>
+					<?php if ($this->params->get('show_cif_headings')) : ?>
+						<td class="item-cif" itemprop="jobTitle">
+							<?php echo $item->pro_cif; ?>
 						</td>
 					<?php endif; ?>
 

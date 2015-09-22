@@ -78,9 +78,9 @@
 			size="30"
 		/>
 
-		<field name="con_position" type="text"
-			description="CONTACT_INFORMATION_POSITION_DESC"
-			label="CONTACT_INFORMATION_POSITION_LABEL"
+		<field name="pro_cif" type="text"
+			description="COM_PROVEEDOR_INFORMATION_CIF_DESC"
+			label="COM_PROVEEDOR_INFORMATION_CIF_LABEL"
 			size="30"
 		/>
 
@@ -263,7 +263,7 @@
 	</fields>
 
 	<fields name="params">
-		<fieldset name="options" label="CONTACT_PARAMETERS">
+		<fieldset name="options" label="COM_PROVEEDOR_PARAMETERS">
 
 		<field name="show_name" type="list"
 			description="CONTACT_PARAMS_NAME_DESC"
@@ -274,9 +274,9 @@
 			<option value="1">JSHOW</option>
 		</field>
 
-		<field name="show_position" type="list"
-			description="CONTACT_PARAMS_NAME_DESC"
-			label="CONTACT_PARAMS_CONTACT_POSITION_LABEL"
+		<field name="show_cif" type="list"
+			description="COM_PROVEEDOR_PARAMS_CIF_DESC"
+			label="COM_PROVEEDOR_PARAMS_CIF_LABEL"
 		>
 			<option value="">JGLOBAL_USE_GLOBAL</option>
 			<option value="0">JHIDE</option>

@@ -129,6 +129,7 @@ class ProveedorViewProveedor extends JViewLegacy
 		{
 			case 1 :
 				// Text
+				$params->set('marker_cif',   JText::_('COM_PROVEEDOR_CIF') . ": ");
 				$params->set('marker_address',   JText::_('COM_PROVEEDOR_ADDRESS') . ": ");
 				$params->set('marker_email',     JText::_('JGLOBAL_EMAIL') . ": ");
 				$params->set('marker_telephone', JText::_('COM_PROVEEDOR_TELEPHONE') . ": ");
@@ -140,6 +141,7 @@ class ProveedorViewProveedor extends JViewLegacy
 
 			case 2 :
 				// None
+				$params->set('marker_cif',   '');
 				$params->set('marker_address',   '');
 				$params->set('marker_email',     '');
 				$params->set('marker_telephone', '');
@@ -208,6 +210,8 @@ class ProveedorViewProveedor extends JViewLegacy
 					$image6 = JHtml::_('image', 'proveedors/' . $params->get('icon_mobile', 'con_mobile.png'), JText::_('COM_PROVEEDOR_MOBILE') . ": ", null, true);
 				}
 
+				/* Añado parametro label de cif*/
+				$params->set('marker_cif',    JText::_('COM_PROVEEDOR_CIF') . ": ");
 				$params->set('marker_address',   $image1);
 				$params->set('marker_email',     $image2);
 				$params->set('marker_telephone', $image3);
