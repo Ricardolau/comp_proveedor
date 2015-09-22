@@ -87,12 +87,6 @@ jimport('joomla.html.html.bootstrap');
 
 	<?php echo $this->loadTemplate('address'); ?>
 
-	<?php if ($this->params->get('allow_vcard')) :	?>
-		<?php echo JText::_('COM_PROVEEDOR_DOWNLOAD_INFORMATION_AS');?>
-		<a href="<?php echo JRoute::_('index.php?option=com_proveedor&amp;view=proveedor&amp;id=' . $this->proveedor->id . '&amp;format=vcf'); ?>">
-		<?php echo JText::_('COM_PROVEEDOR_VCARD');?></a>
-	<?php endif; ?>
-
 	<?php if ($this->params->get('presentation_style') == 'sliders') : ?>
 		<?php echo JHtml::_('bootstrap.endSlide'); ?>
 	<?php endif; ?>

@@ -391,15 +391,6 @@
 			<option value="1">JSHOW</option>
 		</field>
 
-		<field name="allow_vcard" type="list"
-			description="CONTACT_PARAMS_VCARD_LABEL"
-			label="CONTACT_PARAMS_VCARD_LABEL"
-		>
-			<option value="">JGLOBAL_USE_GLOBAL</option>
-			<option value="0">JHIDE</option>
-			<option value="1">JSHOW</option>
-		</field>
-
 		<field name="show_articles" type="list"
 			description="CONTACT_SHOW_ARTICLES_DESC"
 			label="CONTACT_SHOW_ARTICLES_LABEL"

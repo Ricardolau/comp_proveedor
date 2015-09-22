@@ -466,16 +466,6 @@
 				<option value="1">JSHOW</option>
 			</field>
 
-			<field name="allow_vcard"
-				type="list"
-				description="COM_PROVEEDOR_FIELD_PARAMS_VCARD_DESC"
-				label="COM_PROVEEDOR_FIELD_PARAMS_VCARD_LABEL"
-			>
-				<option value="">JGLOBAL_USE_GLOBAL</option>
-				<option value="0">JHIDE</option>
-				<option value="1">JSHOW</option>
-			</field>
-
 			<field name="show_articles"
 				type="list"
 				description="COM_PROVEEDOR_FIELD_ARTICLES_SHOW_DESC"
