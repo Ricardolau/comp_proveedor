@@ -245,7 +245,6 @@
 			>
 				<option value="">JGLOBAL_USE_GLOBAL</option>
 				<option value="name">COM_PROVEEDOR_FIELD_VALUE_NAME</option>
-				<option value="sortname">COM_PROVEEDOR_FIELD_VALUE_SORT_NAME</option>
 				<option value="ordering">COM_PROVEEDOR_FIELD_VALUE_ORDERING</option>
 			</field>
 </fieldset>

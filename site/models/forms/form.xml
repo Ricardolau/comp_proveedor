@@ -54,24 +54,6 @@
 			size="1"
 		/>
 
-		<field name="sortname1" type="text"
-			description="CONTACT_SORTNAME1_DESC"
-			label="CONTACT_SORTNAME1_LABEL"
-			size="30"
-		/>
-
-		<field name="sortname2" type="text"
-			description="CONTACT_SORTNAME3_DESC"
-			label="CONTACT_SORTNAME2_LABEL"
-			size="30"
-		/>
-
-		<field name="sortname3" type="text"
-			description="CONTACT_SORTNAME3_DESC"
-			label="CONTACT_SORTNAME3_LABEL"
-			size="30"
-		/>
-
 		<field name="language" type="text"
 			description="CONTACT_LANGUAGE_DESC"
 			label="CONTACT_LANGUAGE_LABEL"
@@ -138,7 +120,29 @@
 			label="CONTACT_INFORMATION_WEBPAGE_LABEL"
 			size="30"
 		/>
+		<field name="facebook" 
+			type="url"
+			filter="url"
+			description="CONTACT_SORTNAME1_DESC"
+			label="CONTACT_SORTNAME1_LABEL"
+			size="30"
+		/>
 
+		<field name="twitter" 
+			type="url"
+			filter="url"
+			description="CONTACT_TWITTER_DESC"
+			label="CONTACT_TWITTER_LABEL"
+			size="30"
+		/>
+
+		<field name="google_plus" 
+			type="url"
+			filter="url"
+			description="CONTACT_GOOGLEP_DESC"
+			label="CONTACT_GOOGLEP_LABEL"
+			size="30"
+		/>
 		<field name="misc" type="editor"
 			buttons="true"
 			hide="pagebreak,readmore"

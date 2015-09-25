@@ -60,9 +60,9 @@ $this->ignore_fieldsets = array('details', 'item_associations', 'jmetadata');
 						<?php echo $this->form->renderField('mobile'); ?>
 						<?php echo $this->form->renderField('fax'); ?>
 						<?php echo $this->form->renderField('webpage'); ?>
-						<?php echo $this->form->renderField('sortname1'); ?>
-						<?php echo $this->form->renderField('sortname2'); ?>
-						<?php echo $this->form->renderField('sortname3'); ?>
+						<?php echo $this->form->renderField('facebook'); ?>
+						<?php echo $this->form->renderField('twitter'); ?>
+						<?php echo $this->form->renderField('google_plus'); ?>
 					</div>
 				</div>
 			</div>

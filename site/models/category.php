@@ -62,6 +62,7 @@ class ProveedorModelCategory extends JModelList
 	{
 		if (empty($config['filter_fields']))
 		{
+			/* El array genera un sortname, pero no tiene sentido ya que no hay ese campo */
 			$config['filter_fields'] = array(
 				'id', 'a.id',
 				'name', 'a.name',
@@ -70,10 +71,9 @@ class ProveedorModelCategory extends JModelList
 				'state', 'a.state',
 				'country', 'a.country',
 				'ordering', 'a.ordering',
-				'sortname',
-				'sortname1', 'a.sortname1',
-				'sortname2', 'a.sortname2',
-				'sortname3', 'a.sortname3'
+				'facebook', 'a.facebook',
+				'twitter', 'a.twitter',
+				'google_plus', 'a.google_plus'
 			);
 		}
 
@@ -192,18 +192,7 @@ class ProveedorModelCategory extends JModelList
 			$query->where('a.language in (' . $db->quote(JFactory::getLanguage()->getTag()) . ',' . $db->quote('*') . ')');
 		}
 
-		// Set sortname ordering if selected
-		if ($this->getState('list.ordering') == 'sortname')
-		{
-			$query->order($db->escape('a.sortname1') . ' ' . $db->escape($this->getState('list.direction', 'ASC')))
-				->order($db->escape('a.sortname2') . ' ' . $db->escape($this->getState('list.direction', 'ASC')))
-				->order($db->escape('a.sortname3') . ' ' . $db->escape($this->getState('list.direction', 'ASC')));
-		}
-		else
-		{
-			$query->order($db->escape($this->getState('list.ordering', 'a.ordering')) . ' ' . $db->escape($this->getState('list.direction', 'ASC')));
-		}
-
+		$query->order($db->escape($this->getState('list.ordering', 'a.ordering')) . ' ' . $db->escape($this->getState('list.direction', 'ASC')));
 		return $query;
 	}
 

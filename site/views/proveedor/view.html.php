@@ -136,11 +136,19 @@ class ProveedorViewProveedor extends JViewLegacy
 				$params->set('marker_fax',       JText::_('COM_PROVEEDOR_FAX') . ": ");
 				$params->set('marker_mobile',    JText::_('COM_PROVEEDOR_MOBILE') . ": ");
 				$params->set('marker_misc',      JText::_('COM_PROVEEDOR_OTHER_INFORMATION') . ": ");
+				$params->set('marker_facebook',   JText::_('COM_PROVEEDOR_FACEBOOK') . ": ");
+				$params->set('marker_twitter',   JText::_('COM_PROVEEDOR_TWITTER') . ": ");
+				$params->set('marker_google_plus',   JText::_('COM_PROVEEDOR_GOOGLEP') . ": ");
 				$params->set('marker_class',     'jicons-text');
 				break;
 
 			case 2 :
 				// None
+
+				/* Añado parametro label de cif y link redes sociales*/
+				$params->set('marker_facebook',   '');
+				$params->set('marker_twitter',   '');
+				$params->set('marker_google_plus',   '');
 				$params->set('marker_cif',   '');
 				$params->set('marker_address',   '');
 				$params->set('marker_email',     '');
@@ -210,7 +218,11 @@ class ProveedorViewProveedor extends JViewLegacy
 					$image6 = JHtml::_('image', 'proveedors/' . $params->get('icon_mobile', 'con_mobile.png'), JText::_('COM_PROVEEDOR_MOBILE') . ": ", null, true);
 				}
 
-				/* Añado parametro label de cif*/
+
+				/* Añado parametro label de cif y link redes sociales*/
+				$params->set('marker_facebook',   JText::_('COM_PROVEEDOR_FACEBOOK') . ": ");
+				$params->set('marker_twitter',   JText::_('COM_PROVEEDOR_TWITTER') . ": ");
+				$params->set('marker_google_plus',   JText::_('COM_PROVEEDOR_GOOGLEP') . ": ");
 				$params->set('marker_cif',    JText::_('COM_PROVEEDOR_CIF') . ": ");
 				$params->set('marker_address',   $image1);
 				$params->set('marker_email',     $image2);

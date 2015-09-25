@@ -119,9 +119,56 @@ defined('_JEXEC') or die;
 	</dt>
 	<dd>
 		<span class="proveedor-webpage">
-			<a href="<?php echo $this->proveedor->webpage; ?>" target="_blank" itemprop="url">
+			<a href="<?php echo $this->proveedor->webpage; ?>" rel="nofollow" target="_blank" itemprop="url">
 			<?php echo JStringPunycode::urlToUTF8($this->proveedor->webpage); ?></a>
 		</span>
 	</dd>
 <?php endif; ?>
+<?php  // Aquí debería haber un parametro de mostrar redes sociales ... si o no 
+if ($this->proveedor->webpage && $this->params->get('show_webpage')) : ?>
+	<dt>
+		<span class="<?php echo $this->params->get('marker_facebook_class'); ?>" >
+		<?php echo $this->params->get('marker_facebook'); ?>
+		</span>
+	</dt>
+			
+	<dd>
+		<span class="proveedor-facebook">
+			<a href="<?php echo $this->proveedor->facebook; ?>" rel="nofollow" target="_blank" itemprop="url">
+			<?php echo JStringPunycode::urlToUTF8($this->proveedor->facebook); ?></a>
+		</span>
+	</dd>
+	<dt>
+		<span class="<?php echo $this->params->get('marker_twitter_class'); ?>" >
+		<?php echo $this->params->get('marker_twitter'); ?>
+		</span>
+	</dt>
+			
+	<dd>
+		<span class="proveedor-twitter">
+			<a href="<?php echo $this->proveedor->twitter; ?>" rel="nofollow" target="_blank" itemprop="url">
+			<?php echo JStringPunycode::urlToUTF8($this->proveedor->twitter); ?></a>
+		</span>
+	</dd>
+	<dt>
+		<span class="<?php echo $this->params->get('marker_google_plus_class'); ?>" >
+		<?php echo $this->params->get('marker_google_plus'); ?>
+		</span>
+	</dt>
+			
+	<dd>
+		<span class="proveedor-googlep">
+			<a href="<?php echo $this->proveedor->google_plus; ?>" rel="nofollow" target="_blank" itemprop="url">
+			<?php echo JStringPunycode::urlToUTF8($this->proveedor->google_plus); ?></a>
+		</span>
+	</dd>
+	
+	
+	
+<?php endif; ?>
+
+
+
+
+
 </dl>
