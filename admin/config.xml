@@ -95,7 +95,7 @@
 		<field name="show_email"
 			type="radio"
 			class="btn-group btn-group-yesno"
-			default="0"
+			default="1"
 			label="JGLOBAL_EMAIL"
 			description="COM_PROVEEDOR_FIELD_PARAMS_CONTACT_E_MAIL_DESC"
 		>
