@@ -87,6 +87,7 @@
 			default="1"
 			label="COM_PROVEEDOR_FIELD_PARAMS_CIF_LABEL"
 			description="COM_PROVEEDOR_FIELD_PARAMS_CIF_DESC"
+			extension="com_proveedor"
 		>
 			<option value="1">JSHOW</option>
 			<option value="0">JHIDE</option>
@@ -813,6 +814,7 @@
 		<field name="rules"
 			type="rules"
 			label="JCONFIG_PERMISSIONS_LABEL"
+			class="inputbox"
 			validate="rules"
 			filter="rules"
 			component="com_proveedor"

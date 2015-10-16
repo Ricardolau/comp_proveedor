@@ -2,7 +2,7 @@
 
 <extension type="component" version="3.4" method="upgrade">
 
-<name>COM_PROVEEDOR</name>
+<name>com_proveedor</name>
 <author>Soluciones Vigo</author>
 <copyright>Copyright (C) 2014 Soluciones Vigo .</copyright>
 <license>GNU General Public License</license>
@@ -22,6 +22,8 @@
         <file driver="mysql" charset="utf8">sql/uninstall.mysql.sql</file>
     </sql>
 </uninstall>
+<!-- Añadir parametros a tabla extensiones -->
+<scriptfile>script.php</scriptfile>
 
 
 <files folder="site">

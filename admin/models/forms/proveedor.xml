@@ -407,6 +407,7 @@
 				class="chzn-color"
 				label="JGLOBAL_EMAIL"
 				description="COM_PROVEEDOR_FIELD_PARAMS_CONTACT_E_MAIL_DESC"
+				default="1"
 			>
 				<option value="">JGLOBAL_USE_GLOBAL</option>
 				<option value="0">JHIDE</option>
