@@ -44,9 +44,8 @@ class ProveedorModelProveedor extends JModelAdmin
 	protected $batch_commands = array(
 		'assetgroup_id' => 'batchAccess',
 		'language_id' => 'batchLanguage',
-		'tag' => 'batchTag',
-		'user_id' => 'batchUser'
-	);
+		'tag' => 'batchTag'
+		);
 
 	/**
 	 * Batch copy items to a new category or current.
@@ -163,8 +162,7 @@ class ProveedorModelProveedor extends JModelAdmin
 			{
 				$this->table->reset();
 				$this->table->load($pk);
-				$this->table->user_id = (int) $value;
-
+			
 				static::createTagsHelper($this->tagsObserver, $this->type, $pk, $this->typeAlias, $this->table);
 
 				if (!$this->table->store())

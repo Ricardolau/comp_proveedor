@@ -19,7 +19,6 @@ CREATE TABLE IF NOT EXISTS `#__proveedor_details` (
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `ordering` int(11) NOT NULL DEFAULT '0',
   `params` text NOT NULL,
-  `user_id` int(11) NOT NULL DEFAULT '0',
   `catid` int(11) NOT NULL DEFAULT '0',
   `access` int(10) unsigned NOT NULL DEFAULT '0',
   `mobile` varchar(255) NOT NULL DEFAULT '',

@@ -61,7 +61,6 @@ JFactory::getDocument()->addScriptDeclaration('
 			<div class="span9">
 				<div class="row-fluid form-horizontal-desktop">
 					<div class="span6">
-						<?php echo $this->form->renderField('user_id'); ?>
 						<?php echo $this->form->renderField('image'); ?>
 						<?php echo $this->form->renderField('pro_cif'); ?>
 						<?php echo $this->form->renderField('email_to'); ?>

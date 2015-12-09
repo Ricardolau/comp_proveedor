@@ -23,11 +23,6 @@
 			size="30"
 		/>
 
-		<field name="user_id" type="user"
-			description="PROVEEDOR_LINKED_USER_DESC"
-			label="PROVEEDOR_LINKED_USER_LABEL"
-		/>
-
 		<field name="published" type="list"
 			default="1"
 			description="JFIELD_PUBLISHED_DESC"

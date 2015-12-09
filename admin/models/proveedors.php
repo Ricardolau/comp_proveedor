@@ -35,7 +35,6 @@ class ProveedorModelProveedors extends JModelList
 				'checked_out', 'a.checked_out',
 				'checked_out_time', 'a.checked_out_time',
 				'catid', 'a.catid', 'category_title',
-				'user_id', 'a.user_id',
 				'published', 'a.published',
 				'access', 'a.access', 'access_level',
 				'created', 'a.created',
@@ -156,7 +155,7 @@ class ProveedorModelProveedors extends JModelList
 			$db->quoteName(
 				explode(', ', $this->getState(
 					'list.select',
-					'a.id, a.name, a.alias, a.checked_out, a.checked_out_time, a.catid, a.user_id' .
+					'a.id, a.name, a.alias, a.checked_out, a.checked_out_time, a.catid' .
 					', a.published, a.access, a.created, a.created_by, a.ordering, a.featured, a.language' .
 					', a.publish_up, a.publish_down'
 					)
@@ -165,17 +164,7 @@ class ProveedorModelProveedors extends JModelList
 		);
 		$query->from($db->quoteName('#__proveedor_details', 'a'));
 
-		// Join over the users for the linked user.
-		$query->select(
-				array(
-					$db->quoteName('ul.name', 'linked_user'),
-					$db->quoteName('ul.email')
-				)
-			)
-			->join(
-				'LEFT', $db->quoteName('#__users', 'ul')
-				. ' ON ' . $db->quoteName('ul.id') . ' = ' . $db->quoteName('a.user_id')
-			);
+		
 
 		// Join over the language
 		$query->select($db->quoteName('l.title', 'language_title'))

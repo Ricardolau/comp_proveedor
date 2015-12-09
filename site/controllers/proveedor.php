@@ -179,12 +179,6 @@ class ProveedorControllerProveedor extends JControllerForm
 	{
 			$app = JFactory::getApplication();
 
-			if ($proveedor->email_to == '' && $proveedor->user_id != 0)
-			{
-				$proveedor_user      = JUser::getInstance($proveedor->user_id);
-				$proveedor->email_to = $proveedor_user->get('email');
-			}
-
 			$mailfrom = $app->get('mailfrom');
 			$fromname = $app->get('fromname');
 			$sitename = $app->get('sitename');

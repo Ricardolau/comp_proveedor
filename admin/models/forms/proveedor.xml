@@ -36,12 +36,6 @@
 			labelclass="control-label"
 		/>
 
-		<field name="user_id"
-			type="user"
-			label="COM_PROVEEDOR_FIELD_LINKED_USER_LABEL"
-			description="COM_PROVEEDOR_FIELD_LINKED_USER_DESC"
-		/>
-
 		<field id="published"
 			name="published"
 			type="list"

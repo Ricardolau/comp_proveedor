@@ -159,12 +159,7 @@ class ProveedorTableProveedor extends JTable
 
 			return false;
 		}
-		/** sanity check for user_id */
-		if (!($this->user_id))
-		{
-			$this->user_id = 0;
-		}
-
+		
 		// Check the publish down date is not earlier than publish up.
 		if ((int) $this->publish_down > 0 && $this->publish_down < $this->publish_up)
 		{

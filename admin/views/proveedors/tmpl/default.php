@@ -112,9 +112,6 @@ JFactory::getDocument()->addScriptDeclaration('
 						<th>
 							<?php echo JHtml::_('grid.sort', 'JGLOBAL_TITLE', 'a.name', $listDirn, $listOrder); ?>
 						</th>
-						<th class="nowrap hidden-phone">
-							<?php echo JHtml::_('grid.sort', 'COM_PROVEEDOR_FIELD_LINKED_USER_LABEL', 'ul.name', $listDirn, $listOrder); ?>
-						</th>
 						<th width="5%" class="nowrap hidden-phone">
 							<?php echo JHtml::_('grid.sort', 'JFEATURED', 'a.featured', $listDirn, $listOrder); ?>
 						</th>
@@ -206,12 +203,7 @@ JFactory::getDocument()->addScriptDeclaration('
 								</div>
 							</div>
 						</td>
-						<td align="center" class="small hidden-phone">
-							<?php if (!empty($item->linked_user)) : ?>
-								<a href="<?php echo JRoute::_('index.php?option=com_users&task=user.edit&id=' . $item->user_id);?>"><?php echo $item->linked_user;?></a>
-								<div class="small"><?php echo $item->email; ?></div>
-							<?php endif; ?>
-						</td>
+						
 						<td class="center hidden-phone">
 							<?php echo JHtml::_('proveedor.featured', $item->featured, $i, $canChange); ?>
 						</td>

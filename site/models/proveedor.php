@@ -193,13 +193,13 @@ class ProveedorModelProveedor extends JModelForm
 
 				if (empty($data))
 				{
-					JError::raiseError(404, JText::_('COM_PROVEEDOR_ERROR_CONTACT_NOT_FOUND'));
+					JError::raiseError(404, JText::_('COM_PROVEEDOR_ERROR_PROVEEDOR_NOT_FOUND'));
 				}
 
 				// Check for published state if filter set.
 				if (((is_numeric($published)) || (is_numeric($archived))) && (($data->published != $published) && ($data->published != $archived)))
 				{
-					JError::raiseError(404, JText::_('COM_PROVEEDOR_ERROR_CONTACT_NOT_FOUND'));
+					JError::raiseError(404, JText::_('COM_PROVEEDOR_ERROR_PROVEEDOR_NOT_FOUND'));
 				}
 
 				// Convert parameter fields to objects.
@@ -247,20 +247,12 @@ class ProveedorModelProveedor extends JModelForm
 			}
 		}
 
-		if ($this->_item[$pk])
-		{
-			if ($extendedData = $this->getProveedorQuery($pk))
-			{
-				$this->_item[$pk]->articles = $extendedData->articles;
-				$this->_item[$pk]->profile = $extendedData->profile;
-			}
-		}
-
+		
 		return $this->_item[$pk];
 	}
 
 	/**
-	 * Gets the query to load a proveedor item
+	 * Obtiene la consulta para cargar un elemento Proveedor
 	 *
 	 * @param   integer  $pk  The item to be loaded
 	 *
@@ -321,10 +313,10 @@ class ProveedorModelProveedor extends JModelForm
 			{
 				$db->setQuery($query);
 				$result = $db->loadObject();
-
+				// Aqui comprobamos que existe el proveedor sino mostramos error de no encontrado. 
 				if (empty($result))
 				{
-					throw new Exception(JText::_('COM_PROVEEDOR_ERROR_CONTACT_NOT_FOUND'), 404);
+					throw new Exception(JText::_('COM_PROVEEDOR_ERROR_PROVEEDOR_NOT_FOUND'), 404);
 				}
 			}
 			catch (Exception $e)
@@ -342,106 +334,23 @@ class ProveedorModelProveedor extends JModelForm
 
 				// If we are showing a contact list, then the contact parameters take priority
 				// So merge the contact parameters with the merged parameters
-				if ($this->getState('params')->get('show_proveedor_list'))
-				{
-					$this->getState('params')->merge($proveedorParams);
-				}
-
-				// Get the com_content articles by the linked user
-				if ((int) $result->user_id && $this->getState('params')->get('show_articles'))
-				{
-
-					$query	= $db->getQuery(true)
-						->select('a.id')
-						->select('a.title')
-						->select('a.state')
-						->select('a.access')
-						->select('a.catid')
-						->select('a.created')
-						->select('a.language');
-
-					// SQL Server changes
-					$case_when = ' CASE WHEN ';
-					$case_when .= $query->charLength('a.alias', '!=', '0');
-					$case_when .= ' THEN ';
-					$a_id = $query->castAsChar('a.id');
-					$case_when .= $query->concatenate(array($a_id, 'a.alias'), ':');
-					$case_when .= ' ELSE ';
-					$case_when .= $a_id . ' END as slug';
-					$case_when1 = ' CASE WHEN ';
-					$case_when1 .= $query->charLength('c.alias', '!=', '0');
-					$case_when1 .= ' THEN ';
-					$c_id = $query->castAsChar('c.id');
-					$case_when1 .= $query->concatenate(array($c_id, 'c.alias'), ':');
-					$case_when1 .= ' ELSE ';
-					$case_when1 .= $c_id . ' END as catslug';
-					$query->select($case_when1 . ',' . $case_when)
-						->from('#__content as a')
-						->join('LEFT', '#__categories as c on a.catid=c.id')
-						->where('a.created_by = ' . (int) $result->user_id)
-						->where('a.access IN (' . $groups . ')')
-						->order('a.state DESC, a.created DESC');
-
-					// Filter per language if plugin published
-					if (JLanguageMultilang::isEnabled())
-					{
-						$query->where(
-							('a.created_by = ' . (int) $result->user_id) . ' AND ' .
-							('a.language=' . $db->quote(JFactory::getLanguage()->getTag()) . ' OR a.language=' . $db->quote('*'))
-						);
-					}
-
-					if (is_numeric($published))
-					{
-						$query->where('a.state IN (1,2)')
-							->where('(a.publish_up = ' . $nullDate . ' OR a.publish_up <= ' . $nowDate . ')')
-							->where('(a.publish_down = ' . $nullDate . ' OR a.publish_down >= ' . $nowDate . ')');
-					}
-
-					// Number of articles to display from config/menu params
-					$articles_display_num = $this->getState('params')->get('articles_display_num', 10);
-
-					// Use contact setting?
-					if ($articles_display_num === 'use_proveedor')
-					{
-						$articles_display_num = $proveedorParams->get('articles_display_num', 10);
-
-						// Use global?
-						if ((string) $articles_display_num === '')
-						{
-							$articles_display_num = JComponentHelper::getParams('com_proveedor')->get('articles_display_num', 10);
-						}
-					}
-
-					$db->setQuery($query, 0, (int) $articles_display_num);
-					$articles = $db->loadObjectList();
-					$result->articles = $articles;
-				}
-				else
-				{
-					$result->articles = null;
-				}
-
-				// Get the profile information for the linked user
-				require_once JPATH_ADMINISTRATOR . '/components/com_users/models/user.php';
-				$userModel = JModelLegacy::getInstance('User', 'UsersModel', array('ignore_request' => true));
-				$data = $userModel->getItem((int) $result->user_id);
-
-				JPluginHelper::importPlugin('user');
-				$form = new JForm('com_users.profile');
-
-				// Get the dispatcher.
-				$dispatcher	= JEventDispatcher::getInstance();
-
-				// Trigger the form preparation event.
-				$dispatcher->trigger('onContentPrepareForm', array($form, $data));
-
-				// Trigger the data preparation event.
-				$dispatcher->trigger('onContentPrepareData', array('com_users.profile', $data));
-
-				// Load the data into the form after the plugins have operated.
-				$form->bind($data);
-				$result->profile = $form;
+				//~ if ($this->getState('params')->get('show_proveedor_list'))
+				//~ {
+					//~ $this->getState('params')->merge($proveedorParams);
+				//~ }
+//~ 
+				//~ // Get the dispatcher.
+				//~ $dispatcher	= JEventDispatcher::getInstance();
+//~ 
+				//~ // Trigger the form preparation event.
+				//~ $dispatcher->trigger('onContentPrepareForm', array($form, $data));
+//~ 
+				//~ // Trigger the data preparation event.
+				//~ $dispatcher->trigger('onContentPrepareData', array('com_users.profile', $data));
+//~ 
+				//~ // Load the data into the form after the plugins have operated.
+				//~ $form->bind($data);
+				//~ $result->profile = $form;
 				$this->proveedor = $result;
 
 				return $result;
@@ -452,7 +361,7 @@ class ProveedorModelProveedor extends JModelForm
 	}
 
 	/**
-	 * Increment the hit counter for the proveedor.
+	 * Incrementar el contador de visitas para el Proveedor .
 	 *
 	 * @param   integer  $pk  Optional primary key of the proveedor to increment.
 	 *

@@ -102,7 +102,7 @@ jimport('joomla.html.html.bootstrap');
 		<?php echo JHtml::_('bootstrap.endTab'); ?>
 	<?php endif; ?>
 
-	<?php if ($this->params->get('show_email_form') && ($this->proveedor->email_to || $this->proveedor->user_id)) : ?>
+	<?php if ($this->params->get('show_email_form') && ($this->proveedor->email_to )) : ?>
 
 		<?php if ($this->params->get('presentation_style') == 'sliders') : ?>
 			<?php echo JHtml::_('bootstrap.addSlide', 'slide-proveedor', JText::_('COM_PROVEEDOR_EMAIL_FORM'), 'display-form'); ?>
@@ -129,51 +129,9 @@ jimport('joomla.html.html.bootstrap');
 		<?php echo $this->loadTemplate('links'); ?>
 	<?php endif; ?>
 
-	<?php if ($this->params->get('show_articles') && $this->proveedor->user_id && $this->proveedor->articles) : ?>
+	
 
-		<?php if ($this->params->get('presentation_style') == 'sliders') : ?>
-			<?php echo JHtml::_('bootstrap.addSlide', 'slide-proveedor', JText::_('JGLOBAL_ARTICLES'), 'display-articles'); ?>
-		<?php endif; ?>
-		<?php if ($this->params->get('presentation_style') == 'tabs') : ?>
-			<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'display-articles', JText::_('JGLOBAL_ARTICLES', true)); ?>
-		<?php endif; ?>
-		<?php if ($this->params->get('presentation_style') == 'plain'):?>
-			<?php echo '<h3>' . JText::_('JGLOBAL_ARTICLES') . '</h3>';  ?>
-		<?php endif; ?>
-
-		<?php echo $this->loadTemplate('articles'); ?>
-
-		<?php if ($this->params->get('presentation_style') == 'sliders') : ?>
-			<?php echo JHtml::_('bootstrap.endSlide'); ?>
-		<?php endif; ?>
-		<?php if ($this->params->get('presentation_style') == 'tabs') : ?>
-			<?php echo JHtml::_('bootstrap.endTab'); ?>
-		<?php endif; ?>
-
-	<?php endif; ?>
-
-	<?php if ($this->params->get('show_profile') && $this->proveedor->user_id && JPluginHelper::isEnabled('user', 'profile')) : ?>
-
-		<?php if ($this->params->get('presentation_style') == 'sliders') : ?>
-			<?php echo JHtml::_('bootstrap.addSlide', 'slide-proveedor', JText::_('COM_PROVEEDOR_PROFILE'), 'display-profile'); ?>
-		<?php endif; ?>
-		<?php if ($this->params->get('presentation_style') == 'tabs') : ?>
-			<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'display-profile', JText::_('COM_PROVEEDOR_PROFILE', true)); ?>
-		<?php endif; ?>
-		<?php if ($this->params->get('presentation_style') == 'plain'):?>
-			<?php echo '<h3>' . JText::_('COM_PROVEEDOR_PROFILE') . '</h3>';  ?>
-		<?php endif; ?>
-
-		<?php echo $this->loadTemplate('profile'); ?>
-
-		<?php if ($this->params->get('presentation_style') == 'sliders') : ?>
-			<?php echo JHtml::_('bootstrap.endSlide'); ?>
-		<?php endif; ?>
-		<?php if ($this->params->get('presentation_style') == 'tabs') : ?>
-			<?php echo JHtml::_('bootstrap.endTab'); ?>
-		<?php endif; ?>
-
-	<?php endif; ?>
+	
 
 	<?php if ($this->proveedor->misc && $this->params->get('show_misc')) : ?>
 

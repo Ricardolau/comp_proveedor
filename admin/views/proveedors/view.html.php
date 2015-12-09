@@ -170,7 +170,6 @@ class ProveedorViewProveedors extends JViewLegacy
 			'a.published' => JText::_('JSTATUS'),
 			'a.name' => JText::_('JGLOBAL_TITLE'),
 			'category_title' => JText::_('JCATEGORY'),
-			'ul.name' => JText::_('COM_PROVEEDOR_FIELD_LINKED_USER_LABEL'),
 			'a.featured' => JText::_('JFEATURED'),
 			'a.access' => JText::_('JGRID_HEADING_ACCESS'),
 			'a.language' => JText::_('JGRID_HEADING_LANGUAGE'),
