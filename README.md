@@ -2,7 +2,12 @@
 Componente para Joomla 3 de proveedores
 ##Objetivos del Proyecto Componente Proveedores
 ###Objetivos iniciales
-1. Crear un listado de Proveedores con sus campos.(Crear apartado campos)
+1. Crear apartado de Proveedores con sus datos.
+2. Crear apartado de cada proveedor donde pueda meter planilla de trabajo
+	2.1 Plantilla que se tiene una cabecera con los siguiente campos:
+			[FORMA PAGO] - Formas de pago de momento texto plano. Aunque debería se cerradas, es decir que hubiera otra tabla donde creamos esas formas de pago. [CONTADO][SEMANAL], 
+			[OBSERVACIONES DE FORMA PEDIDOS Y ENTREGA]
+			
 2. Que tenga un formulario donde se pueda enviar incidencia.
 DONDE :
 1. Guarde la incidencia en base de datos y con un estado.
